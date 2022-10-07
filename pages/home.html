@@ -1,0 +1,62 @@
+<%- include('partials/header.html') %>
+
+<section class="noticia-destaque">    
+    <div class="center">
+        <div class="img-destaque">
+            <div class="overlay"></div> <!--overlay-->
+            <div class="title-dest-descr">
+                <a href="<%= posts[0].slug %>"><h2><%= posts[0].title %></h2></a>
+                <p><%- posts[0].descricao %>...</p>
+            </div>
+            <img src="<%= posts[0].imagem %>" alt="">
+
+        </div>
+    </div>
+</section>
+<section class="outras-noticias">
+    <div class="title-outras-noticias">
+        <h2>Últimas Notícias</h2>
+        <br><br>
+        <div class="center">
+            <div class="ultimas">                
+           
+                <% for (let i = 1; i < posts.length; i++){ %>       
+                <div class="box-ultima-single">
+                    <img src="<%= posts[i].imagem %>" />
+                    <div class="conteudo-noticia-single">
+                    <h3><%= posts[i].categoria %></h3>
+                    <h2><%= posts[i].title %></h2>
+                    <p><%- posts[i].descricao %>...</p>
+                    <a href="<%= posts[i].slug %>">Saiba mais</a>
+                </div>
+                </div>
+
+               <% } %>
+            </div>
+            <div class="mais-lidas">
+                <h3>Mais lidas</h3>
+                <div class="mais-lidas-noticias">
+
+                    <% for (let i = 0; i < postsTop.length; i++){ %>   
+
+                    <div class="mais-lida-noticias-single">
+                        <img src="<%= postsTop[i].imagem %>" alt="" />
+                        <div class="texto-mais-lida-single">
+                            <h4><%= postsTop[i].title %></h4>
+                            <p><%-  postsTop[i].descricao %>...<br><span style="font-size:12px;font-weight: bold;">(<%= postsTop[i].views %>)</span> views</p>
+                            <a href="<%= postsTop[i].slug %>">Saiba mais</a>
+                        </div>
+                    </div>
+             
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<%- include('partials/footer.html') %>
+
+    </body>
+</html>
