@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 console.log(process.env.WEATHER_API);
+console.log(process.env.WEATHER_API);
 
 const express = require("express");
 const mongoose = require("mongoose");
