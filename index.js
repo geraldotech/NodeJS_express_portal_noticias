@@ -14,7 +14,7 @@ var session = require("express-session");
 const { fstat } = require("fs");
 
 mongoose
-  .connect(process.env.mongo, {
+  .connect(process.env.CHAVE, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
